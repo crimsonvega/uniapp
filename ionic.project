@@ -1,0 +1,12 @@
+{
+  "name": "uni_app",
+  "app_id": "f4f453c2",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
