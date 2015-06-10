@@ -1,8 +1,13 @@
-angular.module('App', ['ionic'])
+angular.module('App', ['ionic', 'starter.controllers'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+    .state('login', {
+       url: '/login',
+       templateUrl: 'views/login/login.html',
+       controller: 'LoginCtrl'
+     })
     .state('tabs', {
       url: '/tabs',
       abstract: true,
@@ -48,13 +53,11 @@ angular.module('App', ['ionic'])
         }
       }
     })
-   .state('login', {
-      url: '/login',
-      templateUrl: 'views/login/login.html'
-    });
 
-  $urlRouterProvider.otherwise('/tabs/notificaciones');
+  $urlRouterProvider.otherwise('/login');
 })
+
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
