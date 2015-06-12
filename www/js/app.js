@@ -49,7 +49,8 @@ angular.module('App', ['ionic', 'starter.controllers'])
       url: '/ajustes',
       views: {
         'ajustes-tab': {
-          templateUrl: 'views/ajustes/ajustes.html'
+          templateUrl: 'views/ajustes/ajustes.html',
+           controller: 'varios'
         }
       }
     })

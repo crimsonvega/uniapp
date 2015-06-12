@@ -22,6 +22,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($scope, $state){
+  $state.go('tabs.notificaciones');
+
   var objeto = {
     usuario: 'Jonathan',
     password: '123'
@@ -51,4 +53,46 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+}).controller('varios', function($scope, $ionicPopover) {
+  
+  $scope.algo = function(){
+      console.log('caca');
+  }
+
+  // .fromTemplate() method
+  var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+
+  /*$scope.popover = $ionicPopover.fromTemplate(template, {
+    scope: $scope
+  });*/
+
+  $ionicPopover.fromTemplateUrl('templates/SubAreas.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function() {
+    // Execute action
+  });
 });
+
+
+
