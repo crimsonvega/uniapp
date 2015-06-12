@@ -54,6 +54,15 @@ angular.module('App', ['ionic', 'starter.controllers'])
         }
       }
     })
+  .state('tabs.ajustesNuevo', {
+      url: '/ajustesNuevo',
+      views: {
+        'ajustes-tab': {
+          templateUrl: 'views/ajustes/Agregar.html',
+          controller: 'varios'
+        }
+      }
+    })
 
   $urlRouterProvider.otherwise('/login');
 })
