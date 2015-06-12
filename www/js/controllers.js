@@ -53,13 +53,15 @@ $state.go('tabs.notificaciones');
   $scope.settings = {
     enableFriends: true
   };
-}).controller('varios', function($scope, $ionicPopover,$state) {
+})
+
+.controller('varios', function($scope, $ionicPopover,$state) {
   
   $scope.cambio = function(){
     $state.go('tabs.ajustes2');
   };
 
-
+    var template = "aki se generara el codigo del popover a partir de la relacion obtenida en la base de datos."
   $ionicPopover.fromTemplateUrl('templates/SubAreas.html', {
     scope: $scope
   }).then(function(popover) {
